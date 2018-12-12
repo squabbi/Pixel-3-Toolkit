@@ -5,13 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
+using AndroidCtrl.ADB;
+using AndroidCtrl.Fastboot;
+using AndroidCtrl.Tools;
+
 
 namespace Pixel_3_Toolkit
 {
@@ -23,6 +21,29 @@ namespace Pixel_3_Toolkit
         public LoadingWindow()
         {
             InitializeComponent();
+        }
+
+        private void SetupAndroidCtrl()
+        {
+            // Extract AndroidCtrl files if none are found
+            if (!ADB.IntegrityCheck())
+            {
+                Deploy.ADB();
+            }
+
+            if (!Fastboot.IntegrityCheck())
+            {
+                Deploy.Fastboot();
+            }
+
+            // Start Monitoring services
+            // Check if ADB server is already running, and check if it is mismatched
+
+            if (!ADB.IsStarted || !ADB.IntegrityVersionCheck())
+            {
+                ADB.Stop();
+                ADB.Start();
+            }
         }
     }
 }
