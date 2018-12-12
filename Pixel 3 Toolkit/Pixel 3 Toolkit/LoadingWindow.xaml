@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pixel_3_Toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Starting..." Height="250" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsEnabled="False" Cursor="Wait">
     <Grid>
-        
+
     </Grid>
 </Window>

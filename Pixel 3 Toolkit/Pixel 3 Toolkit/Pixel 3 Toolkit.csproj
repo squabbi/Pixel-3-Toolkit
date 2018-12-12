@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Pixel_3_Toolkit.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AndroidCtrl">
       <HintPath>..\..\..\..\Development\AndroidCtrl - 2018-04-09.1850\AndroidCtrl.dll</HintPath>
