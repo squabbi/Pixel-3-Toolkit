@@ -58,5 +58,53 @@ namespace Pixel_3_Toolkit.Properties {
                 this["MagiskCustomUrl"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ToolkitData_Magisk {
+            get {
+                return ((string)(this["ToolkitData_Magisk"]));
+            }
+            set {
+                this["ToolkitData_Magisk"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ToolkitData_MagiskModules {
+            get {
+                return ((string)(this["ToolkitData_MagiskModules"]));
+            }
+            set {
+                this["ToolkitData_MagiskModules"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ToolkitData_FactoryImages {
+            get {
+                return ((string)(this["ToolkitData_FactoryImages"]));
+            }
+            set {
+                this["ToolkitData_FactoryImages"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ToolkitData_TWRP {
+            get {
+                return ((string)(this["ToolkitData_TWRP"]));
+            }
+            set {
+                this["ToolkitData_TWRP"] = value;
+            }
+        }
     }
 }
