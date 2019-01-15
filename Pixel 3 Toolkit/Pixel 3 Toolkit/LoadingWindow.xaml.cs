@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Pixel_3_Toolkit.Properties;
 
 using AndroidCtrl.ADB;
 using AndroidCtrl.Fastboot;
@@ -21,6 +22,25 @@ namespace Pixel_3_Toolkit
         public LoadingWindow()
         {
             InitializeComponent();
+
+            // Check for first run or upgrade
+        }
+
+        public void SetStatus(string message)
+        {
+            Task.Run(() => statusTxtBlk.Text = message);
+        }
+
+        private void FirstRunCheck()
+        {
+            // Check if program was first run or upgraded
+            if (Settings.Default.UpgradeRequired)
+            {
+                // Upgrade settings and set flag to false
+                Settings.Default.Upgrade();
+                Settings.Default.UpgradeRequired = false;
+                Settings.Default.Save();
+            }
         }
 
         private void SetupAndroidCtrl()
