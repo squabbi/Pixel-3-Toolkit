@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pixel_3_Toolkit"
         mc:Ignorable="d"
-        Title="Starting..." Height="135" Width="455" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsEnabled="False" Cursor="Wait">
+        Title="Starting..." Height="135" Width="455" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsEnabled="False" Cursor="Wait" Loaded="Window_Loaded">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Pixel 3 Toolkit" VerticalAlignment="Top" FontSize="24"/>
         <ProgressBar Height="20" Margin="10,47,10,0" VerticalAlignment="Top" IsIndeterminate="True"/>

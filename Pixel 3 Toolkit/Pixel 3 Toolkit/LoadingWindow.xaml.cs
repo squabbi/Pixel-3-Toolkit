@@ -23,11 +23,12 @@ namespace Pixel_3_Toolkit
         public LoadingWindow()
         {
             InitializeComponent();
-
-            // Check for first run or upgrade
-            SetStatus(Strings.ConfiguringSettings);
         }
 
+        /// <summary>
+        /// Method for setting the Status message
+        /// </summary>
+        /// <param name="message">Message to be displayed</param>
         public void SetStatus(string message)
         {
             this.Dispatcher.Invoke(() =>
@@ -45,7 +46,10 @@ namespace Pixel_3_Toolkit
                 Settings.Default.Upgrade();
                 Settings.Default.UpgradeRequired = false;
                 Settings.Default.Save();
+
+                MessageBox.Show("First run or upgraded, it looks to be the same so don't worry about that.");
             }
+            MessageBox.Show("No upgrade required.");
         }
 
         private void SetupAndroidCtrl()
@@ -69,6 +73,13 @@ namespace Pixel_3_Toolkit
                 ADB.Stop();
                 ADB.Start();
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Check for first run or upgrade
+            SetStatus(Strings.ConfiguringSettings);
+            FirstRunCheck();
         }
     }
 }
