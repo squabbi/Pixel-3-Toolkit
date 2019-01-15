@@ -2,16 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Pixel_3_Toolkit.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="FirstRun" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
     <Setting Name="ACtrl_Location" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="UpgradeRequired" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="MagiskCanaryUrl" Type="System.String" Scope="User">
+    <Setting Name="MagiskCustomUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

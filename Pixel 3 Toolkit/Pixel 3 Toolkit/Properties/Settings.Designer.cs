@@ -25,18 +25,6 @@ namespace Pixel_3_Toolkit.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool FirstRun {
-            get {
-                return ((bool)(this["FirstRun"]));
-            }
-            set {
-                this["FirstRun"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string ACtrl_Location {
             get {
@@ -62,12 +50,12 @@ namespace Pixel_3_Toolkit.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string MagiskCanaryUrl {
+        public string MagiskCustomUrl {
             get {
-                return ((string)(this["MagiskCanaryUrl"]));
+                return ((string)(this["MagiskCustomUrl"]));
             }
             set {
-                this["MagiskCanaryUrl"] = value;
+                this["MagiskCustomUrl"] = value;
             }
         }
     }
