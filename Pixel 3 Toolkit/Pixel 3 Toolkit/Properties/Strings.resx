@@ -120,7 +120,13 @@
   <data name="ConfiguringSettings" xml:space="preserve">
     <value>Configuring settings...</value>
   </data>
-  <data name="UpgradingSettings" xml:space="preserve">
+  <data name="ExtractingPlatformTools" xml:space="preserve">
+    <value>Extracting Platform Tools...</value>
+  </data>
+  <data name="SettingUpAndroidCtrl" xml:space="preserve">
+    <value>Setting up AndroidCtrl...</value>
+  </data>
+  <data name="Upgrading" xml:space="preserve">
     <value>Upgrading...</value>
   </data>
 </root>

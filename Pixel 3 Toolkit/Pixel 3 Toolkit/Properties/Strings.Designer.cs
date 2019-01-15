@@ -70,11 +70,29 @@ namespace Pixel_3_Toolkit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extracting Platform Tools....
+        /// </summary>
+        internal static string ExtractingPlatformTools {
+            get {
+                return ResourceManager.GetString("ExtractingPlatformTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setting up AndroidCtrl....
+        /// </summary>
+        internal static string SettingUpAndroidCtrl {
+            get {
+                return ResourceManager.GetString("SettingUpAndroidCtrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upgrading....
         /// </summary>
-        internal static string UpgradingSettings {
+        internal static string Upgrading {
             get {
-                return ResourceManager.GetString("UpgradingSettings", resourceCulture);
+                return ResourceManager.GetString("Upgrading", resourceCulture);
             }
         }
     }
