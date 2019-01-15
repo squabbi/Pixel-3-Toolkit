@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Globalization;
 using System.Windows.Controls;
 using Pixel_3_Toolkit.Properties;
 
@@ -24,11 +25,15 @@ namespace Pixel_3_Toolkit
             InitializeComponent();
 
             // Check for first run or upgrade
+            SetStatus(Strings.ConfiguringSettings);
         }
 
         public void SetStatus(string message)
         {
-            Task.Run(() => statusTxtBlk.Text = message);
+            this.Dispatcher.Invoke(() =>
+            {
+                statusTxtBlk.Text = message;
+            });
         }
 
         private void FirstRunCheck()
