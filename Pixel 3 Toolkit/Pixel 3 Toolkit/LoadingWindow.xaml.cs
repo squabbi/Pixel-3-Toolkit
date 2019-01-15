@@ -47,9 +47,13 @@ namespace Pixel_3_Toolkit
                 Settings.Default.UpgradeRequired = false;
                 Settings.Default.Save();
 
-                MessageBox.Show("First run or upgraded, it looks to be the same so don't worry about that.");
+                // Check for First Run after transferring previous settings
+                if (Settings.Default.FirstRun)
+                {
+                    // Open Configurator as dialog
+                    
+                }
             }
-            MessageBox.Show("No upgrade required.");
         }
 
         private void SetupAndroidCtrl()
