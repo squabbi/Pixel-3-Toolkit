@@ -120,6 +120,9 @@
   <data name="ConfiguringSettings" xml:space="preserve">
     <value>Configuring settings...</value>
   </data>
+  <data name="D2CtoBrowse" xml:space="preserve">
+    <value>Double-click to Browse...</value>
+  </data>
   <data name="ExtractingPlatformTools" xml:space="preserve">
     <value>Extracting Platform Tools...</value>
   </data>

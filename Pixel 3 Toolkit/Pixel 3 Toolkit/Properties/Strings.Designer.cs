@@ -22,7 +22,7 @@ namespace Pixel_3_Toolkit.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Strings {
+    public class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Pixel_3_Toolkit.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Pixel_3_Toolkit.Properties.Strings", typeof(Strings).Assembly);
@@ -51,7 +51,7 @@ namespace Pixel_3_Toolkit.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,16 +63,25 @@ namespace Pixel_3_Toolkit.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Configuring settings....
         /// </summary>
-        internal static string ConfiguringSettings {
+        public static string ConfiguringSettings {
             get {
                 return ResourceManager.GetString("ConfiguringSettings", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Double-click to Browse....
+        /// </summary>
+        public static string D2CtoBrowse {
+            get {
+                return ResourceManager.GetString("D2CtoBrowse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extracting Platform Tools....
         /// </summary>
-        internal static string ExtractingPlatformTools {
+        public static string ExtractingPlatformTools {
             get {
                 return ResourceManager.GetString("ExtractingPlatformTools", resourceCulture);
             }
@@ -81,7 +90,7 @@ namespace Pixel_3_Toolkit.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Setting up AndroidCtrl....
         /// </summary>
-        internal static string SettingUpAndroidCtrl {
+        public static string SettingUpAndroidCtrl {
             get {
                 return ResourceManager.GetString("SettingUpAndroidCtrl", resourceCulture);
             }
@@ -90,7 +99,7 @@ namespace Pixel_3_Toolkit.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Upgrading....
         /// </summary>
-        internal static string Upgrading {
+        public static string Upgrading {
             get {
                 return ResourceManager.GetString("Upgrading", resourceCulture);
             }
