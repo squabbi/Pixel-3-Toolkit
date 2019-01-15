@@ -11,7 +11,7 @@ using Pixel_3_Toolkit.Properties;
 using AndroidCtrl.ADB;
 using AndroidCtrl.Fastboot;
 using AndroidCtrl.Tools;
-
+using System.Diagnostics;
 
 namespace Pixel_3_Toolkit
 {
@@ -23,6 +23,9 @@ namespace Pixel_3_Toolkit
         public LoadingWindow()
         {
             InitializeComponent();
+
+            if (Debugger.IsAttached)
+                Settings.Default.Reset();
         }
 
         /// <summary>
@@ -51,7 +54,9 @@ namespace Pixel_3_Toolkit
                 if (Settings.Default.FirstRun)
                 {
                     // Open Configurator as dialog
-                    
+                    Configurator conf = new Configurator();
+                    conf.Owner = Window.GetWindow(this);
+                    conf.ShowDialog();
                 }
             }
         }
