@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
-using System.Globalization;
-using System.Windows.Controls;
 using Pixel_3_Toolkit.Properties;
 
 using AndroidCtrl.ADB;
 using AndroidCtrl.Fastboot;
 using AndroidCtrl.Tools;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using Pixel_3_Toolkit.Models;
 
 namespace Pixel_3_Toolkit
 {
@@ -85,11 +85,21 @@ namespace Pixel_3_Toolkit
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void DownloadData()
+        {
+            FactoryImage fImage = new FactoryImage("Hello", "androidVer", "androidBuild", "Build link no.", "datae 2018", "https://.com/", "0237081374893278402380");
+            MessageBox.Show(fImage.ToString());
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Check for first run or upgrade
             SetStatus(Properties.Resources.ConfiguringSettings);
             FirstRunCheck();
+            SetStatus(Properties.Resources.SettingUpAndroidCtrl);
+            await Task.Run(() => SetupAndroidCtrl());
+            SetStatus(Properties.Resources.DownloadingData);
+            await Task.Run(() => DownloadData());
         }
     }
 }
