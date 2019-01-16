@@ -1,9 +1,10 @@
-﻿<Application x:Class="Pixel_3_Toolkit.App"
+﻿<Application
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Pixel_3_Toolkit"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Pixel_3_Toolkit.App"
              StartupUri="LoadingWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>

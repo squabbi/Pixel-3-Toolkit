@@ -13,5 +13,6 @@ namespace Pixel_3_Toolkit
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
