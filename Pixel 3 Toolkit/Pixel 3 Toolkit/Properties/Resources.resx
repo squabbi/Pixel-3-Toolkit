@@ -150,6 +150,9 @@
   <data name="ConfigMenuText" xml:space="preserve">
     <value>Double click to browse for a path. Leave empty for default values, which will be a folder called 'ToolkitData' in the current directory.</value>
   </data>
+  <data name="DownloadingData" xml:space="preserve">
+    <value>Downloading online data...</value>
+  </data>
   <data name="FactoryImagesC" xml:space="preserve">
     <value>Factory Images:</value>
   </data>

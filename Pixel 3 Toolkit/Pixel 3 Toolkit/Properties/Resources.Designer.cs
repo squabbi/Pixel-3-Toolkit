@@ -124,6 +124,15 @@ namespace Pixel_3_Toolkit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Downloading online data....
+        /// </summary>
+        public static string DownloadingData {
+            get {
+                return ResourceManager.GetString("DownloadingData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extracting Platform Tools....
         /// </summary>
         public static string ExtractingPlatformTools {
