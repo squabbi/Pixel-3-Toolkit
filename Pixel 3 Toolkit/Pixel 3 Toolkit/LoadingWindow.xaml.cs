@@ -24,6 +24,7 @@ namespace Pixel_3_Toolkit
         {
             InitializeComponent();
 
+            // Reset settings if debugging
             if (Debugger.IsAttached)
                 Settings.Default.Reset();
         }
@@ -87,7 +88,7 @@ namespace Pixel_3_Toolkit
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Check for first run or upgrade
-            SetStatus(Strings.ConfiguringSettings);
+            SetStatus(Properties.Resources.ConfiguringSettings);
             FirstRunCheck();
         }
     }
