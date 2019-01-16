@@ -118,5 +118,29 @@ namespace Pixel_3_Toolkit.Properties {
                 this["FirstRun"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CleanUpAfterFactoryImageFlash {
+            get {
+                return ((bool)(this["CleanUpAfterFactoryImageFlash"]));
+            }
+            set {
+                this["CleanUpAfterFactoryImageFlash"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool KillAdbServerOnExit {
+            get {
+                return ((bool)(this["KillAdbServerOnExit"]));
+            }
+            set {
+                this["KillAdbServerOnExit"] = value;
+            }
+        }
     }
 }
