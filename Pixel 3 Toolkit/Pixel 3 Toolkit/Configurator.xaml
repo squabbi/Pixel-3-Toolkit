@@ -3,10 +3,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Pixel_3_Toolkit"
+        xmlns:resx="clr-namespace:Pixel_3_Toolkit.Properties"
         mc:Ignorable="d"
-        Title="Configurator" Height="450" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+        Title="Configurator" Height="480.667" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="{x:Static resx:Resources.ConfigMenuText}" VerticalAlignment="Top" Height="41" Width="374"/>
+
+        <GroupBox Header="{x:Static resx:Resources.AdbAndFastboot}" Height="71" Margin="10,56,10,0" VerticalAlignment="Top">
+            <Grid Margin="5,5,5,0" Height="40" VerticalAlignment="Top">
+                <TextBlock Text="{x:Static resx:Resources.ExtractPlatformToolsTo}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="platformToolsTxtBx" Height="Auto" VerticalAlignment="Top" Margin="0,21,0,0" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="{x:Static resx:Resources.FileLocations}" Height="158" Margin="10,132,10,0" VerticalAlignment="Top">
+            <Grid Height="134" Margin="5,5,5,0" VerticalAlignment="Top">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static resx:Resources.FactoryImagesC}" VerticalAlignment="Top"/>
+                <TextBox x:Name="factoryImageLocTxtBx" VerticalAlignment="Top" Margin="0,21,0,0"/>
+
+                <TextBlock Text="{x:Static resx:Resources.TwrpC}" Margin="0,44,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                <TextBox x:Name="twrpLocTxtBx" VerticalAlignment="Top" Margin="0,65,0,0" />
+
+                <TextBlock Text="{x:Static resx:Resources.MagiskC}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,88,0,0" />
+                <TextBox x:Name="magiskLocTxtBx" VerticalAlignment="Top" Margin="0,109,0,0" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="{x:Static resx:Resources.MagiskCustomUrl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,295,0,0" Height="51" Width="374">
+            <TextBox x:Name="magiskCustomUrlTxtBx" HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351"/>
+        </GroupBox>
+
+        <CheckBox x:Name="killAdbOnCloseCbk" Content="{x:Static resx:Resources.KillAdbServerOnClose}" HorizontalAlignment="Left" Margin="10,351,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cleanUpAfterFacImgSetupCbk" Content="{x:Static resx:Resources.CleanUpAfterFactoryImageFlash}" HorizontalAlignment="Left" Margin="10,371,0,0" VerticalAlignment="Top"/>
+
+        <Button x:Name="saveBtn" Content="{x:Static resx:Resources.Save}" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Margin="0,0,10,10" Click="SaveBtn_Click"/>
+        <Button x:Name="cancelBtn" Content="{x:Static resx:Resources.Cancel}" Margin="0,0,105,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
+        <Button x:Name="defaultBtn" Content="{x:Static resx:Resources.UseDefault}" Margin="10,0,0,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="95"/>
     </Grid>
 </Window>
