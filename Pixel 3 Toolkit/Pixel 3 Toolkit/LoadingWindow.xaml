@@ -8,7 +8,7 @@
         Title="Starting..." Height="135" Width="455" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsEnabled="False" Cursor="Wait" Loaded="Window_Loaded">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Pixel 3 Toolkit" VerticalAlignment="Top" FontSize="24"/>
-        <ProgressBar Height="20" Margin="10,47,10,0" VerticalAlignment="Top" IsIndeterminate="True"/>
+        <ProgressBar x:Name="statusPb" Height="18" Margin="10,47,10,0" VerticalAlignment="Top" IsIndeterminate="True"/>
         <TextBlock x:Name="statusTxtBlk" Margin="10,72,10,0" TextWrapping="NoWrap" Text="Setting up..." VerticalAlignment="Top"/>
     </Grid>
 </Window>
