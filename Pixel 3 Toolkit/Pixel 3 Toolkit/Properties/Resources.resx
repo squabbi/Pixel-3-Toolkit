@@ -180,4 +180,7 @@
   <data name="UseDefault" xml:space="preserve">
     <value>Use Default</value>
   </data>
+  <data name="SettingUpWorkingDirectory" xml:space="preserve">
+    <value>Setting up working directory...</value>
+  </data>
 </root>

@@ -223,6 +223,15 @@ namespace Pixel_3_Toolkit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Setting up working directory....
+        /// </summary>
+        public static string SettingUpWorkingDirectory {
+            get {
+                return ResourceManager.GetString("SettingUpWorkingDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TWRP:.
         /// </summary>
         public static string TwrpC {
