@@ -97,7 +97,7 @@ namespace Pixel_3_Toolkit.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Double click to browse for a path. Leave empty for default values, which will be a folder called &apos;ToolkitData&apos; in the current directory..
+        ///   Looks up a localized string similar to Double click to browse for a folder. Leave empty for default values, which will be a folder called &apos;ToolkitData&apos; in the current directory..
         /// </summary>
         public static string ConfigMenuText {
             get {
@@ -156,6 +156,15 @@ namespace Pixel_3_Toolkit.Properties {
         public static string FactoryImagesC {
             get {
                 return ResourceManager.GetString("FactoryImagesC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A fatal error has occured. The Toolkit will now exit. A log can be found here:.
+        /// </summary>
+        public static string FatalErrorMustExit {
+            get {
+                return ResourceManager.GetString("FatalErrorMustExit", resourceCulture);
             }
         }
         

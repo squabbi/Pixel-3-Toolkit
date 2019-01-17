@@ -148,7 +148,7 @@
     <value>Clean up files after flashing Factory Images.</value>
   </data>
   <data name="ConfigMenuText" xml:space="preserve">
-    <value>Double click to browse for a path. Leave empty for default values, which will be a folder called 'ToolkitData' in the current directory.</value>
+    <value>Double click to browse for a folder. Leave empty for default values, which will be a folder called 'ToolkitData' in the current directory.</value>
   </data>
   <data name="DownloadingData" xml:space="preserve">
     <value>Downloading online data...</value>
@@ -179,6 +179,9 @@
   </data>
   <data name="UseDefault" xml:space="preserve">
     <value>Use Default</value>
+  </data>
+  <data name="FatalErrorMustExit" xml:space="preserve">
+    <value>A fatal error has occured. The Toolkit will now exit. A log can be found here:</value>
   </data>
   <data name="SettingUpWorkingDirectory" xml:space="preserve">
     <value>Setting up working directory...</value>
