@@ -88,6 +88,23 @@ namespace Pixel_3_Toolkit
             }
         }
 
+        private void SetupWorkingDir()
+        {
+            // Create directories if they do not exist, check user preferences.
+            Directory.CreateDirectory("./ToolkitData");
+            // If user settings aren't legit folders, create them as subdirs within ToolkitData
+            if (!Directory.Exists(Settings.Default.ToolkitData_FactoryImages))
+                Directory.CreateDirectory(String.Format("./ToolkitData/{0}", Settings.Default.ToolkitData_FactoryImages));
+
+            if (!Directory.Exists(Settings.Default.ToolkitData_TWRP))
+                Directory.CreateDirectory(String.Format("./ToolkitData/{0}", Settings.Default.ToolkitData_TWRP));
+
+            if (!Directory.Exists(Settings.Default.ToolkitData_Magisk))
+                Directory.CreateDirectory(String.Format("./ToolkitData/{0}", Settings.Default.ToolkitData_Magisk));
+
+            Directory.CreateDirectory(String.Format("./ToolkitData/{0}/Modules", Settings.Default.ToolkitData_Magisk));
+        }
+
         private async void DownloadData()
         {
             
@@ -95,14 +112,26 @@ namespace Pixel_3_Toolkit
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // Check for first run or upgrade
-            SetStatus(Properties.Resources.ConfiguringSettings);
-            FirstRunCheck();
+            try
+            {
+                // Check for first run or upgrade
+                SetStatus(Properties.Resources.ConfiguringSettings);
+                FirstRunCheck();
 
-            SetStatus(Properties.Resources.SettingUpAndroidCtrl);
-            await Task.Run(() => SetupAndroidCtrl());
-            SetStatus(Properties.Resources.DownloadingData);
-            await Task.Run(() => DownloadData());
+                SetStatus(Properties.Resources.SettingUpWorkingDirectory);
+                SetupWorkingDir();
+
+                SetStatus(Properties.Resources.SettingUpAndroidCtrl);
+                await Task.Run(() => SetupAndroidCtrl());
+
+                SetStatus(Properties.Resources.DownloadingData);
+                await Task.Run(() => DownloadData());
+            }
+            catch (IOException ioEx)
+            {
+                MessageBox.Show(ioEx.Message);
+                return;
+            }
         }
     }
 }
