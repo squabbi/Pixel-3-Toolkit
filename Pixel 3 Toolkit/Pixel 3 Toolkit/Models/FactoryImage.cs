@@ -27,6 +27,31 @@ namespace Pixel_3_Toolkit.Models
             this.checksum = checksum ?? throw new ArgumentNullException(nameof(checksum));
         }
 
+        public string Codename
+        {
+            get { return codename; }
+        }
+
+        public string AndroidVersion
+        {
+            get { return androidVersion; }
+        }
+
+        public string AndroidBuild
+        {
+            get { return androidBuild; }
+        }
+
+        public string Build
+        {
+            get { return build; }
+        }
+
+        public string Date
+        {
+            get { return date; }
+        }
+
         public string Link
         {
             get { return link; }
