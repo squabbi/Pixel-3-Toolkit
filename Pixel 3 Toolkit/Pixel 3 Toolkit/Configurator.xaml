@@ -19,13 +19,13 @@
         <GroupBox Header="{x:Static resx:Resources.FileLocations}" Height="158" Margin="10,132,10,0" VerticalAlignment="Top">
             <Grid Height="134" Margin="5,5,5,0" VerticalAlignment="Top">
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static resx:Resources.FactoryImagesC}" VerticalAlignment="Top"/>
-                <TextBox x:Name="factoryImageLocTxtBx" VerticalAlignment="Top" Margin="0,21,0,0"/>
+                <TextBox x:Name="factoryImageLocTxtBx" VerticalAlignment="Top" Margin="0,21,0,0" Text="Factory Images"/>
 
                 <TextBlock Text="{x:Static resx:Resources.TwrpC}" Margin="0,44,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                <TextBox x:Name="twrpLocTxtBx" VerticalAlignment="Top" Margin="0,65,0,0" />
+                <TextBox x:Name="twrpLocTxtBx" VerticalAlignment="Top" Margin="0,65,0,0" Text="TWRP" />
 
                 <TextBlock Text="{x:Static resx:Resources.MagiskC}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,88,0,0" />
-                <TextBox x:Name="magiskLocTxtBx" VerticalAlignment="Top" Margin="0,109,0,0" />
+                <TextBox x:Name="magiskLocTxtBx" VerticalAlignment="Top" Margin="0,109,0,0" Text="Magisk" />
             </Grid>
         </GroupBox>
 
