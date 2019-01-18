@@ -158,12 +158,12 @@ namespace Pixel_3_Toolkit.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Data_FactoryImageJson {
+        public string Data_FactoryImages {
             get {
-                return ((string)(this["Data_FactoryImageJson"]));
+                return ((string)(this["Data_FactoryImages"]));
             }
             set {
-                this["Data_FactoryImageJson"] = value;
+                this["Data_FactoryImages"] = value;
             }
         }
         
