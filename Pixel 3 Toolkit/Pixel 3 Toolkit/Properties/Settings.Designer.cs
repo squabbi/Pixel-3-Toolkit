@@ -142,5 +142,41 @@ namespace Pixel_3_Toolkit.Properties {
                 this["KillAdbServerOnExit"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Data_ClientJson {
+            get {
+                return ((string)(this["Data_ClientJson"]));
+            }
+            set {
+                this["Data_ClientJson"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Data_FactoryImageJson {
+            get {
+                return ((string)(this["Data_FactoryImageJson"]));
+            }
+            set {
+                this["Data_FactoryImageJson"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Data_MagiskJson {
+            get {
+                return ((string)(this["Data_MagiskJson"]));
+            }
+            set {
+                this["Data_MagiskJson"] = value;
+            }
+        }
     }
 }
