@@ -15,6 +15,9 @@ using AndroidCtrl.Fastboot;
 using AndroidCtrl.Tools;
 
 using Newtonsoft.Json;
+using System.Reflection;
+using log4net;
+using log4net.Config;
 
 namespace Pixel_3_Toolkit
 {
@@ -23,13 +26,21 @@ namespace Pixel_3_Toolkit
     /// </summary>
     public partial class LoadingWindow : Window
     {
+        private static readonly ILog _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         public LoadingWindow()
         {
             InitializeComponent();
 
+            // Initalise Log4Net logging
+            XmlConfigurator.Configure();
+
             // Reset settings if debugging
             if (Debugger.IsAttached)
+            {
+                _log.Debug("Clearing settings");
                 Settings.Default.Reset();
+            }
         }
 
         /// <summary>
@@ -47,19 +58,24 @@ namespace Pixel_3_Toolkit
         private void FirstRunCheck()
         {
             // Check if program was first run or upgraded
+            _log.Debug("Checking to see if the program settings require upgrading");
             if (Settings.Default.UpgradeRequired)
             {
                 // Upgrade settings and set flag to false
+                _log.Info("Upgrade required... Upgrading previous settings");
                 Settings.Default.Upgrade();
                 Settings.Default.UpgradeRequired = false;
                 Settings.Default.Save();
 
                 // Check for First Run after transferring previous settings
+                _log.Debug("Checking if this is the first run");
                 if (Settings.Default.FirstRun)
                 {
                     // Open Configurator as dialog
+                    _log.Info("Determined first run.");
                     Configurator conf = new Configurator();
                     conf.Owner = Window.GetWindow(this);
+                    _log.Debug("Showing Configurator window");
                     conf.ShowDialog();
                 }
             }
@@ -70,12 +86,34 @@ namespace Pixel_3_Toolkit
             // Extract AndroidCtrl files if none are found
             if (!ADB.IntegrityCheck())
             {
-                Deploy.ADB();
+                _log.Info("ADB files missing, deploying");
+                // If AndroidCtrl path is empty, deply to ./ToolkitData/adb
+                if (String.IsNullOrEmpty(Settings.Default.ACtrl_Location))
+                {
+                    Deploy.ADB("./ToolkitData/platform-tools");
+                    _log.Info("ADB deployed to ./ToolkitData/platform-tools");
+                }
+                else
+                {
+                    Deploy.ADB(Settings.Default.ACtrl_Location);
+                    _log.Info($"ADB deployed to {Settings.Default.ACtrl_Location}");
+                }
             }
 
             if (!Fastboot.IntegrityCheck())
             {
-                Deploy.Fastboot();
+                _log.Info("fastboot files missing, deploying");
+                // If AndroidCtrl path is empty, deply to ./ToolkitData/adb
+                if (String.IsNullOrEmpty(Settings.Default.ACtrl_Location))
+                {
+                    Deploy.Fastboot("./ToolkitData/platform-tools");
+                    _log.Info("ADB deployed to ./ToolkitData/platform-tools");
+                }
+                else
+                {
+                    Deploy.Fastboot(Settings.Default.ACtrl_Location);
+                    _log.Info($"ADB deployed to {Settings.Default.ACtrl_Location}");
+                }
             }
 
             // Start Monitoring services
@@ -83,7 +121,9 @@ namespace Pixel_3_Toolkit
 
             if (!ADB.IsStarted || !ADB.IntegrityVersionCheck())
             {
+                _log.Warn("ADB server outdated or not started");
                 ADB.Stop();
+                _log.Info("Starting ADB server...");
                 ADB.Start();
             }
         }
@@ -116,6 +156,8 @@ namespace Pixel_3_Toolkit
             {
                 // Check for first run or upgrade
                 SetStatus(Properties.Resources.ConfiguringSettings);
+                _log.Info("Configuring settings");
+                _log.Debug("Checking FirstRun");
                 FirstRunCheck();
 
                 SetStatus(Properties.Resources.SettingUpWorkingDirectory);
