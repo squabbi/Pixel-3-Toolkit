@@ -88,6 +88,15 @@ namespace Pixel_3_Toolkit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Checking for updates....
+        /// </summary>
+        public static string CheckingForUpdates {
+            get {
+                return ResourceManager.GetString("CheckingForUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clean up files after flashing Factory Images..
         /// </summary>
         public static string CleanUpAfterFactoryImageFlash {

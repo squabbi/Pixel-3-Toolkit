@@ -186,4 +186,7 @@
   <data name="SettingUpWorkingDirectory" xml:space="preserve">
     <value>Setting up working directory...</value>
   </data>
+  <data name="CheckingForUpdates" xml:space="preserve">
+    <value>Checking for updates...</value>
+  </data>
 </root>
