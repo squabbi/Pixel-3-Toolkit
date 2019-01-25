@@ -10,5 +10,8 @@ namespace Pixel_3_Toolkit.Util
     {
         public static readonly string factoryImageJson = "https://raw.githubusercontent.com/squabbi/Toolkit-Files/master/dogestep/bluecross/factory-images.json";
         public static readonly string clientJson = "https://raw.githubusercontent.com/squabbi/Toolkit-Files/master/dogestep/bluecross/client.json";
+
+        public static readonly List<string[]> clientDownloadsList = new List<string[]> { new string[] { "factory-images.json", factoryImageJson },
+            new string[] { "client.json", clientJson } };
     }
 }
