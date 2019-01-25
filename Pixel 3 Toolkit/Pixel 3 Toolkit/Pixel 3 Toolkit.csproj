@@ -81,6 +81,7 @@
     <Compile Include="Configurator.xaml.cs">
       <DependentUpon>Configurator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Util\Constants.cs" />
     <Page Include="Configurator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
