@@ -6,7 +6,10 @@ using System.IO;
 using System.Windows;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Net;
+using System.Deployment;
 
+using Pixel_3_Toolkit.Util;
 using Pixel_3_Toolkit.Properties;
 using Pixel_3_Toolkit.Models;
 
@@ -131,7 +134,8 @@ namespace Pixel_3_Toolkit
         private void SetupWorkingDir()
         {
             // Create directories if they do not exist, check user preferences.
-            Directory.CreateDirectory("./ToolkitData");
+            Directory.CreateDirectory("./ToolkitData/Client");
+
             // If user settings aren't legit folders, create them as subdirs within ToolkitData
             if (!Directory.Exists(Settings.Default.ToolkitData_FactoryImages))
                 Directory.CreateDirectory(String.Format("./ToolkitData/{0}", Settings.Default.ToolkitData_FactoryImages));
@@ -145,9 +149,35 @@ namespace Pixel_3_Toolkit
             Directory.CreateDirectory(String.Format("./ToolkitData/{0}/Modules", Settings.Default.ToolkitData_Magisk));
         }
 
-        private async void DownloadData()
+        private async Task DownloadFileAsync(string[] downloadsProperties)
         {
-            
+            try
+            {
+                using (WebClient webClient = new WebClient())
+                {
+                    string saveLocation = "./ToolkitData/Client/" + downloadsProperties[0];
+                    webClient.Credentials = CredentialCache.DefaultNetworkCredentials;
+
+                    _log.Info($"Downloading {downloadsProperties[0]}");
+                    await webClient.DownloadFileTaskAsync(new Uri(downloadsProperties[1]), saveLocation);
+                }
+            }
+            catch (Exception)
+            {
+                _log.Error($"Failed to download {downloadsProperties[0]}");
+            }
+        }
+
+        private async Task DownloadClientFiles()
+        {
+            await Task.WhenAll(Constants.clientDownloadsList.Select(download => DownloadFileAsync(download)));
+        }
+
+        private async Task CheckForUpdates()
+        {
+            // Determine client version
+            MessageBox.Show(Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            MessageBox.Show(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
@@ -167,7 +197,10 @@ namespace Pixel_3_Toolkit
                 await Task.Run(() => SetupAndroidCtrl());
 
                 SetStatus(Properties.Resources.DownloadingData);
-                await Task.Run(() => DownloadData());
+                await DownloadClientFiles();
+
+                SetStatus(Properties.Resources.CheckingForUpdates);
+                await CheckForUpdates();
             }
             catch (IOException ioEx)
             {
