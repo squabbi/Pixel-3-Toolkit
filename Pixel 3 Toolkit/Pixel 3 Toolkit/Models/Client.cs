@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pixel_3_Toolkit.Models
 {
-    class Client
+    public class Client
     {
         public Client(Toolkit toolkit, Images images)
         {

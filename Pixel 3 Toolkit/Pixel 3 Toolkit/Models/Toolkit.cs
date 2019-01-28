@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pixel_3_Toolkit.Models
 {
-    class Toolkit
+    public class Toolkit
     {
         public Toolkit(string version, string versionCode, string updateLink, string xdaThreadLink, string note)
         {

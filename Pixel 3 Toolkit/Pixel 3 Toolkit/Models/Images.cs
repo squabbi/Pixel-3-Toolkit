@@ -2,7 +2,7 @@
 
 namespace Pixel_3_Toolkit.Models
 {
-    class Images
+    public class Images
     {
         public Images(string version, string versionCode)
         {
