@@ -18,13 +18,13 @@ namespace Pixel_3_Toolkit.Models
 
         public FactoryImage(string codename, string androidVersion, string androidBuild, string build, string date, string link, string checksum)
         {
-            this.codename = codename ?? throw new ArgumentNullException(nameof(codename));
-            this.androidVersion = androidVersion ?? throw new ArgumentNullException(nameof(androidVersion));
-            this.androidBuild = androidBuild ?? throw new ArgumentNullException(nameof(androidBuild));
-            this.build = build ?? throw new ArgumentNullException(nameof(build));
-            this.date = date ?? throw new ArgumentNullException(nameof(date));
-            this.link = link ?? throw new ArgumentNullException(nameof(link));
-            this.checksum = checksum ?? throw new ArgumentNullException(nameof(checksum));
+            this.Codename = codename ?? throw new ArgumentNullException(nameof(codename));
+            this.AndroidVersion = androidVersion ?? throw new ArgumentNullException(nameof(androidVersion));
+            this.AndroidBuild = androidBuild ?? throw new ArgumentNullException(nameof(androidBuild));
+            this.Build = build ?? throw new ArgumentNullException(nameof(build));
+            this.Date = date ?? throw new ArgumentNullException(nameof(date));
+            this.Link = link ?? throw new ArgumentNullException(nameof(link));
+            this.Checksum = checksum ?? throw new ArgumentNullException(nameof(checksum));
         }
 
         public string Codename
@@ -64,7 +64,7 @@ namespace Pixel_3_Toolkit.Models
 
         public override string ToString()
         {
-            return String.Format("Android {0}, {1} - {2}", androidVersion, date, androidBuild);
+            return String.Format("Android {0}, {1} - {2}", AndroidVersion, Date, AndroidBuild);
         }
     }
 }
