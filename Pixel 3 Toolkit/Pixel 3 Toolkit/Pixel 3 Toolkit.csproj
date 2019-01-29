@@ -81,7 +81,12 @@
     <Compile Include="Configurator.xaml.cs">
       <DependentUpon>Configurator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\RemoteVersionCodeMalformedException.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Images.cs" />
+    <Compile Include="Models\Toolkit.cs" />
     <Compile Include="Util\Constants.cs" />
+    <Compile Include="Util\Tools.cs" />
     <Page Include="Configurator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

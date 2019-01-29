@@ -173,11 +173,17 @@ namespace Pixel_3_Toolkit
             await Task.WhenAll(Constants.clientDownloadsList.Select(download => DownloadFileAsync(download)));
         }
 
-        private async Task CheckForUpdates()
+        private async Task CheckForUpdates(Client client)
         {
-            // Determine client version
-            MessageBox.Show(Assembly.GetExecutingAssembly().GetName().Version.ToString());
-            MessageBox.Show(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
+            // Compare client version
+            try
+            {
+                Tools.Instance.CheckVersion(client.Toolkit);
+            }
+            catch (Exceptions.RemoteVersionCodeMalformedException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
